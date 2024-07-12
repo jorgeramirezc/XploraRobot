@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - TUMI ROBOTICS</title>
+    {% else %}
+    <title>TUMI ROBOTICS - VEHICLE INTERFACE</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/jquery2_1_0.js')}}"></script>
+  </head>
+  
+  <body>
+    <header class="global">
+      <h1>TUMI ROBOTICS</h1>
+    </header>
+    
+    <div class="leftpanel">
+      <div class="sistema">
+        <h2>SISTEMA</h2>
+        <div class="sistema_section">
+          <h3>Bateria:</h3>
+          <meter id="MeterBat" value="0" min="0" max="25"></meter><br>
+          <b id="BatteryVoltage">15</b><br>
+          <b id="lowBattery">low</b>
+        </div>
+        
+        <div class="sistema_section">
+          <h3>Movement:</h3>
+          <b>Direction: </b><b id="direccion">Backward</b><br>
+          <b>Giro: </b><b id="giro">Turn Right</b><br>
+        </div>
+        
+        <div class="sistema_section">
+          <h3>Power:</h3>
+          <b>Drive: </b><b id="drive"></b><br>
+          <b>Retro: </b><b id="retro"></b><br>
+          <b>Distancia: </b><b id="distancia"></b><br>
+        </div>
+      </div>
+      
+      <div class="medidores">
+      <h2>MEDIDORES</h2>
+      <h3>Motores(Corriente):</h3>
+      <meter id="Mcur_D1" value="0" min="0" optimum="8" low="10" high="15" max="20"></meter> * 
+      <meter id="Mcur_D2" value="0" optimum="8" low="10" high="15" min="0" max="20"></meter><br>
+      <b class="current" id="cur_d1">0</b> <b class="current" id="cur_d2">0</b><br>
+      <meter id="Mcur_I1" value="0" min="0" optimum="8" low="10" high="15" max="20"></meter> * 
+      <meter id="Mcur_I2" value="0" optimum="8" low="10" high="15" min="0" max="20"></meter><br>
+      <b class="current" id="cur_i1">0</b> <b id="cur_i2">0</b>
+      
+      <h3>Motores(velocidad):</h3>
+      <meter id="Mder_vel" value="0" optimum="5" low="10" high="15" min="0" max="100"></meter> * 
+      <meter id="Mizq_vel" value="0" min="0" max="100"></meter>
+      
+      <h3>LEDs:</h3>
+      <meter id="LedF" value="0" low="25" min="0" max="100"></meter> * 
+      <meter id="LedB" value="0" low="25" min="0" max="100"></meter>
+      
+      <h3>Camara:</h3>
+      <meter id="camTilt" value="50" min="0" max="100"></meter>
+      <h3>Gripper:</h3>
+      <meter id="myMeterGripper" value="0" min="0" max="100"></meter>
+      
+      <p id="demo"></p>
+    </div>
+    </div>
+    
+    <div class="video">
+      <div class="video_container">
+        <img id="8080" src="http://192.168.137.2:8080/?action=stream" alt="8080" style="width: 100%;"/>
+        <div class = "bottom-left"><b id="TotalDistanceVideo"></b></div>
+      </div>
+      <div class="video_container">
+        <img src="http://192.168.137.2:8082/?action=stream" alt="8082" style="width: 100%; transform: rotate(180deg);"/>
+      </div>
+    </div>
+    
+    <footer class="global">
+      <p>Copyright  2019 - Todos los derechos reservados<p/>
+    </footer>
+    
+    <script type="text/javascript" src="{{url_for('static', filename='js/gamepad.js')}}"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+header {
+  padding:0.3em;
+}
+
+body {
+  font-size: 90%;
+  line-height: 1.2;
+  font-family: calibri;
+  color: white;
+}
+
+footer {
+  clear:both;
+  padding:0.1em;
+}
+
+h3 {
+  margin-bottom:0%;
+}
+
+.global {
+  background-color:SlateGrey;
+  font-family:calibri;
+  color:white;
+  text-align:center;
+}
+
+.leftpanel {
+  width:23%;
+  background-color:DarkSlateGrey;
+  position:relative;
+  float:left;
+  padding: .5%;
+}
+
+.sistema {
+  width:45%;
+  float:left;
+}
+
+.medidores {
+  width:55%;
+  float:left;
+}
+
+.sistema_section{
+  padding-bottom: 13%;
+}
+
+.video {
+  width:76%;
+  position:relative;
+  float:left;
+}
+
+.video_container {
+  width: 48%;
+  float: left;
+  text-align: center;
+  color: black;
+  padding:1%;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+
+.zoom-result {
+  width:480px;
+  height:360px;
+  display: table-cell;
+}
+
+.current {
+  padding-right: 3.7em;
+}
+
+#lowBattery {
+  color:#FE5F5F;
+}
